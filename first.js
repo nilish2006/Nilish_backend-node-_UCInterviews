@@ -49,14 +49,10 @@ app.get('/episodes', async (req, res) => {
           name: allEpisodes.name,
       season: allEpisodes.season,
       number: allEpisodes.number,
-      numberofep : allEpisodes.data.length,
+    numberofep : allEpisodes.length,
+      data: allEpisodes
    });
 
-    res.send({
-      message: "All Friends episodes fetched successfully",
-      totalEpisodes: allEpisodes.data.length,
-      data: allEpisodes
-    });
 
   } catch (error) {
     res.status(500).send({
